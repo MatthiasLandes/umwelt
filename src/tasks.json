@@ -8,8 +8,22 @@
 
       {
         "id": 2,
-        "name": "Rote Sonne",
-        "loc": [48.1421809, 11.5701425],
+        "name": "LBV Stelle Nürnberg",
+        "loc": [49.4386685, 11.0800137],
         "icon": 2
+      },
+
+      {
+        "id": 3,
+        "name": "Igel in Bayern",
+        "loc": [48.15027, 11.590853],
+        "icon": 3
+      },
+
+      {
+        "id": 4,
+        "name": "Mauerbau für Eisvogel",
+        "loc": [48.284892067488, 11.474543809891482],
+        "icon": 4
       }
 ]
