@@ -3,6 +3,7 @@ import './App.css';
 
 import GoogleMapReact from 'google-map-react';
 import React from "react";
+import Task from "../src/Task"
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         <p>
           2000 Euro Fördergeld
         </p>
-
+        <Task></Task>
 
         // (Important! Always set the container height explicitly)
           <div style={{ height: '100vh', width: '100%' }}>
