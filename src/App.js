@@ -11,10 +11,10 @@ function App() {
 
   const defaultProps = {
     center: {
-      lat: 10.99835602,
-      lng: 77.01502627
+      lat: 48.137154,
+      lng: 11.576124
     },
-    zoom: 11
+    zoom: 13
   };
 
   return (
