@@ -1,15 +1,17 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "name": "Blitz",
         "loc": [48.1313416, 11.5859253],
-        "icon": 1
+        "icon": 1,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Blitz-club-munich-2020.jpg"
       },
 
       {
-        "id": 2,
+        "id": 1,
         "name": "Rote Sonne",
         "loc": [48.1421809, 11.5701425],
-        "icon": 2
+        "icon": 2,
+        "image": "https://www.in-muenchen.de/bilder/2022/07/14/91666553/29369418-die-rote-sonne-am-maximiliansplatz-GMH.jpg"
       }
 ]
