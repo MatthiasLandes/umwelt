@@ -6,6 +6,7 @@
         "icon": 1
       },
 
+
       {
         "id": 2,
         "name": "LBV Stelle Nürnberg",
@@ -25,5 +26,12 @@
         "name": "Mauerbau für Eisvogel",
         "loc": [48.284892067488, 11.474543809891482],
         "icon": 4
+      },
+
+      {
+        "id": 5,
+        "name": "Amphibien Beobachtung",
+        "loc": [48.1279656, 11.9661237],
+        "icon": 5
       }
 ]
