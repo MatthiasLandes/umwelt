@@ -17,12 +17,8 @@ function App() {
     <div className="App">
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          2000 Euro Fördergeld
+          Prototyp
         </p>
         <div id="wrapper">
         <div id="div1">
