@@ -18,6 +18,22 @@
   }
 }
 
+#wrapper {
+  border: 0px solid rgb(225, 225, 225);
+}
+#div1 {
+  display: inline-block;
+  width:200px;
+  height:700px;
+  border: 0px solid red;
+}
+#div2 {
+  display: inline-block;
+  width:700px;
+  height:700px;
+  border: 0px solid green;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
