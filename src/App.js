@@ -4,7 +4,6 @@ import './App.css';
 import GoogleMapReact from 'google-map-react';
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from "leaflet";
 import tasks from "../src/tasks.json";
 
 // {defaultProps.center}
