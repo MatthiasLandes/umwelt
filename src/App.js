@@ -28,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -40,7 +41,7 @@ function App() {
 
         // (Important! Always set the container height explicitly)
           <div style={{ height: '100vh', width: '100%' }}>
-          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+          <MapContainer center={[48.137154, 11.576124]} zoom={19} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
