@@ -18,10 +18,10 @@ export default function Info(props) {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        {tasks[props.id].name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {tasks[props.id].name}
+          INFO BELONGS HERE
         </Typography>
       </CardContent>
       <CardActions>
