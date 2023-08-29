@@ -1,29 +1,33 @@
 [
   {
-      "id": 1,
+      "id": 0,
       "name": "Blitz",
       "loc": [48.1313416, 11.5859253],
-      "icon": 1
+      "icon": 1,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
+    },
+
+    {
+      "id": 1,
+      "name": "LBV Stelle Nürnberg",
+      "loc": [49.4386685, 11.0800137],
+      "icon": 2,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
     },
 
     {
       "id": 2,
-      "name": "LBV Stelle Nürnberg",
-      "loc": [49.4386685, 11.0800137],
-      "icon": 2
+      "name": "Igel in Bayern",
+      "loc": [48.15027, 11.590853],
+      "icon": 3,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
     },
 
     {
       "id": 3,
-      "name": "Igel in Bayern",
-      "loc": [48.15027, 11.590853],
-      "icon": 3
-    },
-
-    {
-      "id": 4,
       "name": "Mauerbau für Eisvogel",
       "loc": [48.284892067488, 11.474543809891482],
-      "icon": 4
+      "icon": 4,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
     }
 ]
