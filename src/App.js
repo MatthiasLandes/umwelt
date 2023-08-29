@@ -3,9 +3,9 @@ import './App.css';
 
 import GoogleMapReact from 'google-map-react';
 import React from "react";
-import Task from "../src/Task"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from "leaflet";
+import tasks from "../src/tasks.json";
 
 // {defaultProps.center}
 
@@ -37,15 +37,21 @@ function App() {
         <p>
           2000 Euro Fördergeld
         </p>
-        <Task></Task>
 
         // (Important! Always set the container height explicitly)
           <div style={{ height: '100vh', width: '100%' }}>
-          <MapContainer center={[48.137154, 11.576124]} zoom={19} scrollWheelZoom={false}>
+          <MapContainer center={[48.137154, 11.576124]} zoom={16} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+            {tasks.map((task) => (
+            <Marker position={task.loc}>
+              <Popup>
+                {task.name}
+              </Popup>
+            </Marker>
+            ))}
           </MapContainer>
           </div>
       </header>
