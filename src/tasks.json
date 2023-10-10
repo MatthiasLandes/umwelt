@@ -12,7 +12,7 @@
       "name": "LBV Stelle Nürnberg",
       "loc": [49.4386685, 11.0800137],
       "icon": 2,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/LBV-Absender-Logo_100%25_blau.png"
     },
 
     {
@@ -20,7 +20,7 @@
       "name": "Igel in Bayern",
       "loc": [48.15027, 11.590853],
       "icon": 3,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
+      "image": "https://de.wikipedia.org/wiki/Igel#/media/Datei:Je%C5%BE_Hedgehog_1.JPG"
     },
 
     {
@@ -28,6 +28,6 @@
       "name": "Mauerbau für Eisvogel",
       "loc": [48.284892067488, 11.474543809891482],
       "icon": 4,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
+      "image": "https://de.wikipedia.org/wiki/Eisvogel#/media/Datei:Ein_Eisvogel_im_Schwebflug.jpg"
     }
   ]
