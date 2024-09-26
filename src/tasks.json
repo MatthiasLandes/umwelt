@@ -1,33 +1,57 @@
 [
- {
-      "id": 0,
-      "name": "Blitz",
-      "loc": [48.1313416, 11.5859253],
-      "icon": 1,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg"
-    },
-
-    {
-      "id": 1,
-      "name": "LBV Stelle Nürnberg",
-      "loc": [49.4386685, 11.0800137],
-      "icon": 2,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/LBV-Absender-Logo_100%25_blau.png"
-    },
-
-    {
-      "id": 2,
-      "name": "Igel in Bayern",
-      "loc": [48.15027, 11.590853],
-      "icon": 3,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Je%C5%BE_Hedgehog_1.JPG/1280px-Je%C5%BE_Hedgehog_1.JPG"
-    },
-
-    {
-      "id": 3,
-      "name": "Mauerbau für Eisvogel",
-      "loc": [48.284892067488, 11.474543809891482],
-      "icon": 4,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ein_Eisvogel_im_Schwebflug.jpg/1280px-Ein_Eisvogel_im_Schwebflug.jpg"
+  {
+    "id": 0,
+    "name": "Blitz",
+    "loc": [48.1313416, 11.5859253],
+    "icon": "blitz-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg",
+    "sidebarInfo": "Ein bekannter Nachtclub in München.",
+    "description": "Der Blitz Club ist bekannt für seine elektronischen Musikveranstaltungen und das moderne Design. Er liegt im Zentrum Münchens und zieht sowohl lokale als auch internationale Künstler an.",
+    "extraDetails": {
+      "category": "Nachtclub",
+      "openingHours": "22:00 - 05:00",
+      "entryFee": "10€"
     }
-  ]
+  },
+  {
+    "id": 1,
+    "name": "LBV Stelle Nürnberg",
+    "loc": [49.4386685, 11.0800137],
+    "icon": "lbv-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/LBV-Absender-Logo_100%25_blau.png",
+    "sidebarInfo": "LBV (Landesbund für Vogelschutz) in Nürnberg.",
+    "description": "Die LBV-Stelle in Nürnberg setzt sich für den Schutz von Vögeln und deren Lebensräume in Bayern ein. Sie bietet verschiedene Bildungs- und Naturschutzprojekte an.",
+    "extraDetails": {
+      "category": "Naturschutzorganisation",
+      "services": ["Bildungsprojekte", "Naturschutzprojekte", "Führungen"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Igel in Bayern",
+    "loc": [48.15027, 11.590853],
+    "icon": "hedgehog-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Je%C5%BE_Hedgehog_1.JPG/1280px-Je%C5%BE_Hedgehog_1.JPG",
+    "sidebarInfo": "Ein häufiger Gast in bayerischen Gärten.",
+    "description": "Der Igel ist in Bayern weit verbreitet und oft in Gärten anzutreffen. Er ernährt sich hauptsächlich von Insekten und ist ein wichtiger Bestandteil des ökologischen Gleichgewichts.",
+    "extraDetails": {
+      "habitat": "Wälder, Gärten, Parks",
+      "diet": "Insekten, Würmer, Schnecken",
+      "status": "Nicht gefährdet"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mauerbau für Eisvogel",
+    "loc": [48.284892067488, 11.474543809891482],
+    "icon": "kingfisher-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ein_Eisvogel_im_Schwebflug.jpg/1280px-Ein_Eisvogel_im_Schwebflug.jpg",
+    "sidebarInfo": "Ein Projekt zum Schutz des Eisvogels in Bayern.",
+    "description": "Der Bau von Schutzmauern für den Eisvogel hilft dabei, seinen Lebensraum zu sichern. Der Eisvogel ist in Bayern heimisch und steht unter Naturschutz.",
+    "extraDetails": {
+      "projectStatus": "Aktiv",
+      "funding": "5000€",
+      "partners": ["LBV", "Naturschutz Bayern"]
+    }
+  }
+]

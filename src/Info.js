@@ -21,27 +21,32 @@ export default function Info(props) {
 
   const open = Boolean(anchorEl);
 
+  // Finde den Task basierend auf der ID
+  const task = tasks[props.id];
+
   return (
-    <Card sx={{ maxWidth: 345, position: 'relative' }}> {/* Make sure the card position is set to relative */}
+    <Card sx={{ maxWidth: 345, position: 'relative' }}>
+      {/* Sidebar Content */}
       <CardMedia
         component="img"
-        alt={tasks[props.id].name}
+        alt={task.name}
         height="140"
-        image={tasks[props.id].image}
+        image={task.image} // Bild wird in der Sidebar angezeigt
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {tasks[props.id].name}
+          {task.name} {/* Name wird in der Sidebar angezeigt */}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          INFO BELONGS HERE
+          INFO BELONGS HERE {/* Text in der Sidebar */}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small" onClick={handleClick}>Learn More</Button>
+        <Button size="small" onClick={handleClick}>Learn More</Button> {/* Öffnet das Popover */}
       </CardActions>
 
+      {/* Popover Content (unterschiedlicher Inhalt) */}
       <Popover
         open={open}
         anchorEl={anchorEl}
@@ -54,21 +59,31 @@ export default function Info(props) {
           vertical: 'center',
           horizontal: 'left',
         }}
-        sx={{ marginLeft: 4 }} // Add some space between the card and the popover
+        sx={{ marginLeft: 4 }}
       >
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
-            alt="Sample Image"
+            alt={task.name}
             height="140"
-            image="https://via.placeholder.com/345x140"
+            image={task.icon ? `/path/to/icons/${task.icon}.png` : task.image} 
+            // Optional ein anderes Bild im Popover, z.B. ein Icon statt des Bildes aus der Sidebar
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Sample Title
+              {task.name} {/* Der Name bleibt gleich */}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              This is some sample text for the Learn More section. It has been designed to match the size and layout of the original card.
+              {task.description || "Keine detaillierte Beschreibung verfügbar."} {/* Detaillierte Beschreibung im Popover */}
+            </Typography>
+            {/* Füge zusätzliche Informationen nur im Popover hinzu */}
+            <Typography variant="body2" color="text.secondary">
+              <strong>Weitere Details:</strong> 
+              {/* Beispiel: Zusätzlicher Content im Popover */}
+              <ul>
+                <li>Standort: {task.loc.join(', ')}</li>
+                <li>ID: {task.id}</li>
+              </ul>
             </Typography>
           </CardContent>
         </Card>
