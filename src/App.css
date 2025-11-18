@@ -20,17 +20,42 @@
 
 #wrapper {
   border: 0px solid rgb(225, 225, 225);
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1200px;
 }
+
 #div1 {
-  display: inline-block;
-  width:200px;
-  height:700px;
+  width: 300px;
+  height: 700px;
   border: 0px solid red;
+  overflow-y: auto;
+  padding-right: 10px;
 }
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  transform: translateY(-2px);
+}
+
+.sidebar-item.selected {
+  border-left: 4px solid #4caf50;
+}
+
 #div2 {
-  display: inline-block;
-  width:700px;
-  height:700px;
+  flex: 1;
+  height: 700px;
   border: 0px solid green;
 }
 

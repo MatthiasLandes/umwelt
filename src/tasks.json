@@ -5,6 +5,7 @@
     "loc": [48.1313416, 11.5859253],
     "icon": "blitz-icon",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Rote_Sonne_Nightclub_Munich_2.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Blitz_Club_Munich.jpg",
     "sidebarInfo": "Ein bekannter Nachtclub in München.",
     "description": "Der Blitz Club ist bekannt für seine elektronischen Musikveranstaltungen und das moderne Design. Er liegt im Zentrum Münchens und zieht sowohl lokale als auch internationale Künstler an.",
     "extraDetails": {
@@ -19,6 +20,7 @@
     "loc": [49.4386685, 11.0800137],
     "icon": "lbv-icon",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/LBV-Absender-Logo_100%25_blau.png",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/d/dd/LBV_Headquarters_Nuremberg.jpg",
     "sidebarInfo": "LBV (Landesbund für Vogelschutz) in Nürnberg.",
     "description": "Die LBV-Stelle in Nürnberg setzt sich für den Schutz von Vögeln und deren Lebensräume in Bayern ein. Sie bietet verschiedene Bildungs- und Naturschutzprojekte an.",
     "extraDetails": {
@@ -32,12 +34,14 @@
     "loc": [48.15027, 11.590853],
     "icon": "hedgehog-icon",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Je%C5%BE_Hedgehog_1.JPG/1280px-Je%C5%BE_Hedgehog_1.JPG",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Je%C5%BE_Hedgehog_1.JPG/1280px-Je%C5%BE_Hedgehog_1.JPG",
     "sidebarInfo": "Ein häufiger Gast in bayerischen Gärten.",
-    "description": "Der Igel ist in Bayern weit verbreitet und oft in Gärten anzutreffen. Er ernährt sich hauptsächlich von Insekten und ist ein wichtiger Bestandteil des ökologischen Gleichgewichts.",
+    "description": "Mit den ausgewerteten Meldedaten wollen wir klären, wie es dem Igel geht - auch im Vergleich zu früher gemachten Beobachtungen. Zusätzliche Forschungsarbeiten über Lebensräume und Verhalten der Tiere sollen zeigen, wie etwa Landwirtschaftsformen, Verkehrsinfrastruktur und andere menschliche Eingriffe die Umwelt der Igel verändern. Ziel des Projektes ist es, genug Daten zu gewinnen, um herauszufinden, welche Faktoren den Igelbestand gefährden und welche konkreten Schutzmaßnahmen dagegen entwickelt werden können",
     "extraDetails": {
       "habitat": "Wälder, Gärten, Parks",
-      "diet": "Insekten, Würmer, Schnecken",
-      "status": "Nicht gefährdet"
+      "Igel Melden": "https://www.lbv.de/news/details/igel-melden-leicht-gemacht-per-app/",
+      "status": "Nicht gefährdet",
+      "Zeitraum": "1.08. - 1.12.2024"
     }
   },
   {
@@ -46,12 +50,78 @@
     "loc": [48.284892067488, 11.474543809891482],
     "icon": "kingfisher-icon",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ein_Eisvogel_im_Schwebflug.jpg/1280px-Ein_Eisvogel_im_Schwebflug.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Common_Kingfisher_Alcedo_atthis.jpg",
     "sidebarInfo": "Ein Projekt zum Schutz des Eisvogels in Bayern.",
     "description": "Der Bau von Schutzmauern für den Eisvogel hilft dabei, seinen Lebensraum zu sichern. Der Eisvogel ist in Bayern heimisch und steht unter Naturschutz.",
     "extraDetails": {
       "projectStatus": "Aktiv",
       "funding": "5000€",
       "partners": ["LBV", "Naturschutz Bayern"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Naturschutzgebiet Ammersee",
+    "loc": [47.9837, 11.1329],
+    "icon": "nature-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Diessen_Ammersee_01.jpg/1280px-Diessen_Ammersee_01.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Ammersee_Sunset.jpg/1280px-Ammersee_Sunset.jpg",
+    "sidebarInfo": "Wichtiges Schutzgebiet für Wasservögel und Amphibien.",
+    "description": "Das Naturschutzgebiet am Ammersee ist ein bedeutender Rückzugsort für viele bedrohte Tier- und Pflanzenarten. Die Uferbereiche und Feuchtwiesen bieten ideale Bedingungen für Wasservögel, Amphibien und seltene Pflanzengesellschaften.",
+    "extraDetails": {
+      "category": "Naturschutzgebiet",
+      "size": "1200 Hektar",
+      "established": "1976",
+      "specialSpecies": ["Rohrdommel", "Europäischer Laubfrosch", "Sumpf-Gladiole"]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Umweltbildungszentrum Augsburg",
+    "loc": [48.3705, 10.8978],
+    "icon": "education-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Augsburg_Umweltbildungszentrum_1.jpg/1280px-Augsburg_Umweltbildungszentrum_1.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Augsburg_Umweltzentrum_Workshop.jpg/1280px-Augsburg_Umweltzentrum_Workshop.jpg",
+    "sidebarInfo": "Zentrum für Umweltbildung und nachhaltige Entwicklung.",
+    "description": "Das Umweltbildungszentrum Augsburg bietet zahlreiche Workshops, Seminare und Ausstellungen zum Thema Umweltschutz und Nachhaltigkeit an. Hier werden sowohl Schulklassen als auch Erwachsene für den bewussten Umgang mit natürlichen Ressourcen sensibilisiert.",
+    "extraDetails": {
+      "category": "Bildungseinrichtung",
+      "programs": ["Schulworkshops", "Fortbildungen", "Ausstellungen"],
+      "contact": "info@ubz-augsburg.de",
+      "openingHours": "Mo-Fr: 9:00-17:00"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Ökostation Würzburg",
+    "loc": [49.7913, 9.9324],
+    "icon": "eco-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/W%C3%BCrzburg_Main.jpg/1280px-W%C3%BCrzburg_Main.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/W%C3%BCrzburg_Ecological_Center.jpg/1280px-W%C3%BCrzburg_Ecological_Center.jpg",
+    "sidebarInfo": "Umweltpädagogisches Zentrum mit Schwerpunkt Biodiversität.",
+    "description": "Die Ökostation Würzburg ist ein Ort der Umweltbildung und ökologischen Forschung. Sie bietet Programme zur Förderung der Artenvielfalt in städtischen Räumen und arbeitet eng mit Schulen und Universitäten zusammen. Der angeschlossene Naturgarten zeigt heimische Pflanzen und Lebensräume.",
+    "extraDetails": {
+      "category": "Umweltpädagogik",
+      "focus": ["Biodiversität", "Urban Gardening", "Klimaschutz"],
+      "events": "Monatliche Workshops und Führungen",
+      "volunteers": "Freiwilligenprogramm für alle Altersgruppen"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Walderlebniszentrum Bayerischer Wald",
+    "loc": [48.8924, 13.4513],
+    "icon": "forest-icon",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Nationalpark_Bayerischer_Wald_-_Lusen.jpg/1280px-Nationalpark_Bayerischer_Wald_-_Lusen.jpg",
+    "popoverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Baumwipfelpfad_im_Nationalpark_Bayerischer_Wald.jpg/1280px-Baumwipfelpfad_im_Nationalpark_Bayerischer_Wald.jpg",
+    "sidebarInfo": "Erlebniszentrum für den Nationalpark Bayerischer Wald.",
+    "description": "Das Walderlebniszentrum im Bayerischen Wald bietet Besuchern die Möglichkeit, den Nationalpark und seine einzigartige Tier- und Pflanzenwelt hautnah zu erleben. Der berühmte Baumwipfelpfad ermöglicht einen einmaligen Blick auf den Wald aus der Vogelperspektive. Zahlreiche interaktive Ausstellungen informieren über das Ökosystem Wald und die Bedeutung des Naturschutzes.",
+    "extraDetails": {
+      "category": "Besucherzentrum",
+      "highlights": ["Baumwipfelpfad", "Tierfreigelände", "Waldmuseum"],
+      "openingHours": "Apr-Okt: täglich 9:00-18:00, Nov-Mär: 10:00-16:00",
+      "entrance": "Erwachsene 12€, Kinder 6€",
+      "conservation": "Aktive Renaturierungsprojekte und Artenschutzprogramme"
     }
   }
 ]

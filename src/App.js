@@ -1,13 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
-import GoogleMapReact from 'google-map-react';
-import React, { useState }from "react";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useState, useEffect } from "react";
+import { Marker, Popup, useMap } from 'react-leaflet';
+import BayernMap from "./BayernMap";
 import tasks from "../src/tasks.json";
 import Info from "./Info"
 
-// {defaultProps.center}
+// MapController component to handle map focus changes
+function MapController({ selectedId }) {
+  const map = useMap();
+
+  useEffect(() => {
+    // Find the selected task
+    const selectedTask = tasks[selectedId];
+    if (selectedTask && selectedTask.loc) {
+      // Pan to the location with animation and appropriate zoom level
+      map.flyTo(selectedTask.loc, 12, {
+        animate: true,
+        duration: 1
+      });
+    }
+  }, [selectedId, map]);
+
+  return null; // This component doesn't render anything
+}
 
 function App() {
 
@@ -15,40 +31,46 @@ function App() {
 
   return (
     <div className="App">
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
       <header className="App-header">
         <p>
           Prototyp
         </p>
         <div id="wrapper">
-        <div id="div1">
-        <Info id={id}></Info>
-        </div>
+          <div id="div1" className="sidebar-container">
+            {/* Replace single Info with a mapped list of all entries */}
+            {tasks.map((task) => (
+              <div
+                key={task.id}
+                className={`sidebar-item ${task.id === id ? 'selected' : ''}`}
+                onClick={() => setId(task.id)}
+              >
+                <Info id={task.id} compact={true} />
+              </div>
+            ))}
+          </div>
 
           <div id="div2">
-          <MapContainer center={[48.137154, 11.576124]} zoom={16} scrollWheelZoom={false}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            {tasks.map((task) => (
-            <Marker 
-              position={task.loc} 
-              eventHandlers={{
-                click: (e) => {
-                  setId(task.id)
-                },
-              }}
-              >
-              <Popup>
-                {task.name}
-              </Popup>
-              
-            </Marker>
-            ))}
-          </MapContainer>
+            <BayernMap>
+              {/* Add the MapController component to handle focus changes */}
+              <MapController selectedId={id} />
+              {tasks.map((task) => (
+                <Marker
+                  key={task.id}
+                  position={task.loc}
+                  eventHandlers={{
+                    click: (e) => {
+                      setId(task.id)
+                    },
+                  }}
+                >
+                  <Popup>
+                    {task.name}
+                  </Popup>
+                </Marker>
+              ))}
+            </BayernMap>
           </div>
-          </div>
+        </div>
       </header>
     </div>
   );

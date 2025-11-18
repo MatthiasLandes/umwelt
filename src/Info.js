@@ -10,9 +10,11 @@ import tasks from "../src/tasks.json";
 
 export default function Info(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { id, compact } = props;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    event.stopPropagation(); // Prevent triggering parent onClick
   };
 
   const handleClose = () => {
@@ -21,32 +23,39 @@ export default function Info(props) {
 
   const open = Boolean(anchorEl);
 
-  // Finde den Task basierend auf der ID
-  const task = tasks[props.id];
+  // Find the task based on the ID
+  const task = tasks[id];
+  
+  // Compact style for list view
+  const cardStyle = compact ? 
+    { maxWidth: 345, position: 'relative', marginBottom: '0' } : 
+    { maxWidth: 345, position: 'relative' };
 
   return (
-    <Card sx={{ maxWidth: 345, position: 'relative' }}>
+    <Card sx={cardStyle}>
       {/* Sidebar Content */}
       <CardMedia
         component="img"
         alt={task.name}
-        height="140"
-        image={task.image} // Bild wird in der Sidebar angezeigt
+        height={compact ? "80" : "140"}
+        image={task.image}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {task.name} {/* Name wird in der Sidebar angezeigt */}
+      <CardContent sx={compact ? { padding: '8px' } : {}}>
+        <Typography gutterBottom variant={compact ? "body1" : "h5"} component="div">
+          {task.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          INFO BELONGS HERE {/* Text in der Sidebar */}
-        </Typography>
+        {!compact && (
+          <Typography variant="body2" color="text.secondary">
+            {task.sidebarInfo || "Keine Info verfügbar."}
+          </Typography>
+        )}
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small" onClick={handleClick}>Learn More</Button> {/* Öffnet das Popover */}
+        {!compact && <Button size="small">Share</Button>}
+        <Button size="small" onClick={handleClick}>Learn More</Button>
       </CardActions>
 
-      {/* Popover Content (unterschiedlicher Inhalt) */}
+      {/* Popover Content */}
       <Popover
         open={open}
         anchorEl={anchorEl}
@@ -66,25 +75,27 @@ export default function Info(props) {
             component="img"
             alt={task.name}
             height="140"
-            image={task.icon ? `/path/to/icons/${task.icon}.png` : task.image} 
-            // Optional ein anderes Bild im Popover, z.B. ein Icon statt des Bildes aus der Sidebar
+            image={task.popoverImage || task.image}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {task.name} {/* Der Name bleibt gleich */}
+              {task.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {task.description || "Keine detaillierte Beschreibung verfügbar."} {/* Detaillierte Beschreibung im Popover */}
+              {task.description || "Keine detaillierte Beschreibung verfügbar."}
             </Typography>
-            {/* Füge zusätzliche Informationen nur im Popover hinzu */}
-            <Typography variant="body2" color="text.secondary">
-              <strong>Weitere Details:</strong> 
-              {/* Beispiel: Zusätzlicher Content im Popover */}
-              <ul>
-                <li>Standort: {task.loc.join(', ')}</li>
-                <li>ID: {task.id}</li>
-              </ul>
-            </Typography>
+            {task.extraDetails && (
+              <Typography variant="body2" color="text.secondary" component="div">
+                <strong>Weitere Details:</strong>
+                <ul>
+                  {Object.entries(task.extraDetails).map(([key, value]) => (
+                    <li key={key}>
+                      {key}: {Array.isArray(value) ? value.join(', ') : value}
+                    </li>
+                  ))}
+                </ul>
+              </Typography>
+            )}
           </CardContent>
         </Card>
       </Popover>

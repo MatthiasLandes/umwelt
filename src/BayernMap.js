@@ -24,18 +24,14 @@ const defaultIcon = L.icon({
 // Setze das Standardicon für alle Marker
 L.Marker.prototype.options.icon = defaultIcon;
 
-function BayernMap() {
+function BayernMap({ children }) {
   return (
     <MapContainer center={[48.7904, 11.4979]} zoom={7} style={{ width: '100%', height: '600px' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; OpenStreetMap-Mitwirkende'
       />
-      <Marker position={[48.137154, 11.576124]}>
-        <Popup>
-          <strong>München</strong><br />Dies ist ein Marker mit dem Standardicon.
-        </Popup>
-      </Marker>
+      {children}
     </MapContainer>
   );
 }
