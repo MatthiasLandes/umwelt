@@ -89,25 +89,28 @@ function App() {
           </Box>
         </Drawer>
 
-        <Box component="main" sx={{ flexGrow: 1, height: '100%', mt: '64px', position: 'relative' }}>
-          <BayernMap>
-            <MapController selectedId={id} />
-            {tasks.map((task) => (
-              <Marker
-                key={task.id}
-                position={task.loc}
-                eventHandlers={{
-                  click: (e) => {
-                    setId(task.id)
-                  },
-                }}
-              >
-                <Popup>
-                  {task.name}
-                </Popup>
-              </Marker>
-            ))}
-          </BayernMap>
+        <Box component="main" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+          <Toolbar />
+          <Box sx={{ flexGrow: 1, position: 'relative' }}>
+            <BayernMap>
+              <MapController selectedId={id} />
+              {tasks.map((task) => (
+                <Marker
+                  key={task.id}
+                  position={task.loc}
+                  eventHandlers={{
+                    click: (e) => {
+                      setId(task.id)
+                    },
+                  }}
+                >
+                  <Popup>
+                    {task.name}
+                  </Popup>
+                </Marker>
+              ))}
+            </BayernMap>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
