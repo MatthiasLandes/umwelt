@@ -6,6 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Popover from '@mui/material/Popover';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import tasks from "../src/tasks.json";
 
 export default function Info(props) {
@@ -17,7 +21,8 @@ export default function Info(props) {
     event.stopPropagation(); // Prevent triggering parent onClick
   };
 
-  const handleClose = () => {
+  const handleClose = (event) => {
+    if (event) event.stopPropagation();
     setAnchorEl(null);
   };
 
@@ -25,34 +30,45 @@ export default function Info(props) {
 
   // Find the task based on the ID
   const task = tasks[id];
-  
-  // Compact style for list view
-  const cardStyle = compact ? 
-    { maxWidth: 345, position: 'relative', marginBottom: '0' } : 
-    { maxWidth: 345, position: 'relative' };
+
+  if (!task) return null;
 
   return (
-    <Card sx={cardStyle}>
-      {/* Sidebar Content */}
+    <Card sx={{ width: '100%', display: 'flex', flexDirection: 'column', height: '100%' }}>
       <CardMedia
         component="img"
         alt={task.name}
-        height={compact ? "80" : "140"}
+        height={compact ? "120" : "140"}
         image={task.image}
+        sx={{ objectFit: 'cover' }}
       />
-      <CardContent sx={compact ? { padding: '8px' } : {}}>
-        <Typography gutterBottom variant={compact ? "body1" : "h5"} component="div">
+      <CardContent sx={{ flexGrow: 1, p: 2, '&:last-child': { pb: 2 } }}>
+        <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: '1rem', lineHeight: 1.2, mb: 1 }}>
           {task.name}
         </Typography>
+
+        {compact && (
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: 'text.secondary' }}>
+              <LocationOnIcon sx={{ fontSize: 16 }} />
+              <Typography variant="caption" noWrap>
+                {task.sidebarInfo || "Bayern"}
+              </Typography>
+            </Box>
+          </Box>
+        )}
+
         {!compact && (
           <Typography variant="body2" color="text.secondary">
             {task.sidebarInfo || "Keine Info verfügbar."}
           </Typography>
         )}
       </CardContent>
-      <CardActions>
-        {!compact && <Button size="small">Share</Button>}
-        <Button size="small" onClick={handleClick}>Learn More</Button>
+
+      <CardActions sx={{ px: 2, pb: 2, pt: 0 }}>
+        <Button size="small" onClick={handleClick} variant="outlined" fullWidth>
+          Details
+        </Button>
       </CardActions>
 
       {/* Popover Content */}
@@ -68,33 +84,39 @@ export default function Info(props) {
           vertical: 'center',
           horizontal: 'left',
         }}
-        sx={{ marginLeft: 4 }}
+        sx={{ ml: 1 }}
       >
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 400 }}>
           <CardMedia
             component="img"
             alt={task.name}
-            height="140"
+            height="200"
             image={task.popoverImage || task.image}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {task.name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1" color="text.secondary" paragraph>
               {task.description || "Keine detaillierte Beschreibung verfügbar."}
             </Typography>
+
             {task.extraDetails && (
-              <Typography variant="body2" color="text.secondary" component="div">
-                <strong>Weitere Details:</strong>
-                <ul>
+              <Box sx={{ mt: 2 }}>
+                <Typography variant="subtitle2" color="primary" gutterBottom>
+                  Weitere Details
+                </Typography>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   {Object.entries(task.extraDetails).map(([key, value]) => (
-                    <li key={key}>
-                      {key}: {Array.isArray(value) ? value.join(', ') : value}
-                    </li>
+                    <Chip
+                      key={key}
+                      label={`${key}: ${Array.isArray(value) ? value.join(', ') : value}`}
+                      size="small"
+                      variant="outlined"
+                    />
                   ))}
-                </ul>
-              </Typography>
+                </Box>
+              </Box>
             )}
           </CardContent>
         </Card>
