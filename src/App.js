@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Marker, Popup, useMap } from 'react-leaflet';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -67,6 +67,8 @@ function App() {
   const [mapTarget, setMapTarget] = useState(null);
   const [mapSearching, setMapSearching] = useState(false);
   const [mapSearchError, setMapSearchError] = useState('');
+  const itemRefs = useRef({});
+  const selectionSource = useRef('sidebar');
 
   const filteredTasks = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -80,7 +82,14 @@ function App() {
     });
   }, [query]);
 
+  useEffect(() => {
+    if (selectionSource.current === 'map' && itemRefs.current[id]) {
+      itemRefs.current[id].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [id]);
+
   const handleSelect = (taskId) => {
+    selectionSource.current = 'sidebar';
     setId(taskId);
   };
 
@@ -170,7 +179,7 @@ function App() {
                 </Typography>
               )}
               {filteredTasks.map((task) => (
-                <ListItem key={task.id} disablePadding sx={{ mb: 2 }}>
+                <ListItem key={task.id} disablePadding sx={{ mb: 2 }} ref={(el) => { itemRefs.current[task.id] = el; }}>
                   <ListItemButton
                     selected={task.id === id}
                     onClick={() => handleSelect(task.id)}
@@ -246,6 +255,28 @@ function App() {
                 </Typography>
               )}
             </Paper>
+            <Paper
+              elevation={2}
+              sx={{
+                position: 'absolute',
+                bottom: 16,
+                left: 16,
+                zIndex: 1200,
+                px: 2,
+                py: 0.75,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                borderRadius: 2,
+                backgroundColor: 'primary.main',
+                color: 'primary.contrastText',
+              }}
+            >
+              <ForestIcon fontSize="small" />
+              <Typography variant="body2" fontWeight={600}>
+                {tasks.length} Aktionen in Bayern
+              </Typography>
+            </Paper>
             <BayernMap>
               <MapController selectedId={id} />
               <MapSearchController target={mapTarget} />
@@ -254,8 +285,9 @@ function App() {
                   key={task.id}
                   position={task.loc}
                   eventHandlers={{
-                    click: (e) => {
-                      setId(task.id)
+                    click: () => {
+                      selectionSource.current = 'map';
+                      setId(task.id);
                     },
                   }}
                 >
