@@ -36,3 +36,18 @@
 .leaflet-bottom {
   z-index: 1000 !important;
 }
+
+/* Custom map marker overrides — remove Leaflet's default divIcon background/border */
+.event-marker,
+.org-marker {
+  background: none !important;
+  border: none !important;
+}
+
+.org-marker {
+  transition: opacity 0.2s ease;
+}
+
+.org-marker:hover {
+  opacity: 1 !important;
+}

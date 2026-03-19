@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "name": "LBV Landesgeschäftsstelle",
+    "type": "Naturschutzverband",
+    "loc": [49.1872, 11.1876],
+    "address": "Eisvogelweg 1, 91161 Hilpoltstein",
+    "website": "https://www.lbv.de",
+    "description": "Zentrale Geschäftsstelle des Landesbundes für Vogel- und Naturschutz in Bayern e.V."
+  },
+  {
+    "id": 1,
+    "name": "BUND Naturschutz Landesverband",
+    "type": "Naturschutzverband",
+    "loc": [48.1351, 11.5820],
+    "address": "Dr.-Johann-Maier-Str. 4, 93049 Regensburg",
+    "website": "https://www.bund-naturschutz.de",
+    "description": "Landesverband des BUND Naturschutz in Bayern, einer der größten Umweltschutzverbände Deutschlands."
+  },
+  {
+    "id": 2,
+    "name": "Nationalparkverwaltung Berchtesgaden",
+    "type": "Nationalpark",
+    "loc": [47.5552, 12.9556],
+    "address": "Doktorberg 6, 83471 Berchtesgaden",
+    "website": "https://www.nationalpark-berchtesgaden.bayern.de",
+    "description": "Verwaltung des einzigen Alpennationalparks Deutschlands."
+  },
+  {
+    "id": 3,
+    "name": "Bayerische Akademie für Naturschutz",
+    "type": "Bildungseinrichtung",
+    "loc": [47.8571, 12.6294],
+    "address": "Seethalerstr. 6, 83410 Laufen",
+    "website": "https://www.anl.bayern.de",
+    "description": "Fortbildungsstätte für Naturschutz und Landschaftspflege in Bayern."
+  },
+  {
+    "id": 4,
+    "name": "Wildtierstiftung Bayern",
+    "type": "Stiftung",
+    "loc": [48.7758, 11.4310],
+    "address": "Ingolstädter Str. 3, 85072 Eichstätt",
+    "website": "https://www.wildtierstiftung.de",
+    "description": "Engagement für den Schutz heimischer Wildtiere und deren Lebensräume."
+  }
+]
